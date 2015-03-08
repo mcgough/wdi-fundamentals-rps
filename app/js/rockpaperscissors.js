@@ -86,4 +86,25 @@ function playToFive() {
     return [playerWins, computerWins];
 }
 
-//playToFive();
+//Extra Challenge
+
+function playTo(x) {
+    alert("Let's play Rock, Paper, Scissors");
+    var playerWins = 0, computerWins = 0, match;
+    while(playerWins < x && computerWins < x) {
+        alert('Rock, paper, or scissors?');
+        match = getWinner(getPlayerMove(getInput()), getComputerMove(randomPlay()));
+        if(match === 'player') {
+            playerWins += 1;
+            console.log('You won!!!');
+            console.log('The score is now You: ' + playerWins + ' Computer: ' + computerWins);
+        }else if(match === 'computer') {
+            computerWins += 1;
+            console.log('You lost...');
+            console.log('The score is now You: ' + playerWins + ' Computer: ' + computerWins);
+        }else if(match === 'tie') {
+            console.log('That match was a tie');
+        }
+    }
+    return [playerWins, computerWins];
+}
